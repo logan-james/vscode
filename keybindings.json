@@ -2,78 +2,101 @@
 [
   // NAVIGATION
   {
-    // toggles between open terminals
-    "key": "shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
+    "key": "ctrl+shift+a", // Shortcut key combination
+    "command": "workbench.action.terminal.focusNext", // Moves focus to the next terminal window
+    "when": "terminalFocus" // Condition: this command works when the terminal is focused
   },
   {
-    // toggles between open terminals
-    "key": "shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
+    "key": "ctrl+shift+b", // Shortcut key combination
+    "command": "workbench.action.terminal.focusPrevious", // Moves focus to the previous terminal window
+    "when": "terminalFocus" // Condition: this command works when the terminal is focused
   },
   {
-    // opens terminal
-    "key": "shift+j",
-    "command": "workbench.action.togglePanel"
+    "key": "ctrl+shift+j", // Shortcut key combination
+    "command": "workbench.action.togglePanel" // Toggles the visibility of the bottom panel (terminal, problems, output, debug console views)
   },
   {
-    // opens new terminal
-    "key": "shift+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus"
+    "key": "ctrl+shift+n", // Shortcut key combination
+    "command": "workbench.action.terminal.new", // Opens a new terminal window
+    "when": "terminalFocus" // Condition: this command works when the terminal is focused
   },
   {
-    "key": "ctrl+shift+w",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus"
+    "key": "ctrl+shift+w", // Shortcut key combination
+    "command": "workbench.action.terminal.kill", // Closes the currently focused terminal window
+    "when": "terminalFocus" // Condition: this command works when the terminal is focused
   },
 
   // FILE TREE
-  // open tree with caps+e
   {
-    "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
+    "command": "workbench.action.toggleSidebarVisibility", // Toggles the visibility of the sidebar
+    "key": "ctrl+e" // Shortcut key combination
   },
   {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
-    "when": "editorTextFocus"
+    "command": "workbench.files.action.focusFilesExplorer", // Focuses the file explorer view
+    "key": "ctrl+e", // Shortcut key combination
+    "when": "editorTextFocus" // Condition: this command works when an editor is focused
   },
   {
-    "key": "n",
-    "command": "explorer.newFile",
-    "when": "filesExplorerFocus && !inputFocus"
+    "key": "n", // Shortcut key
+    "command": "explorer.newFile", // Creates a new file in the currently focused directory in the file explorer
+    "when": "filesExplorerFocus && !inputFocus" // Condition: works when file explorer is focused and no input box is active
   },
   {
-    "command": "renameFile",
-    "key": "r",
-    "when": "filesExplorerFocus && !inputFocus"
+    "command": "renameFile", // Renames the selected file in the file explorer
+    "key": "r", // Shortcut key
+    "when": "filesExplorerFocus && !inputFocus" // Condition: works when file explorer is focused and no input box is active
   },
   {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
+    "key": "shift+n", // Shortcut key combination
+    "command": "explorer.newFolder", // Creates a new folder in the file explorer
+    "when": "explorerViewletFocus" // Condition: works when the explorer viewlet is focused
   },
   {
-    "key": "shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!explorerViewletFocus"
+    "key": "shift+n", // Shortcut key combination
+    "command": "workbench.action.newWindow", // Opens a new window of the editor
+    "when": "!explorerViewletFocus" // Condition: works when the explorer viewlet is not focused
   },
   {
-    "command": "deleteFile",
-    "key": "d",
-    "when": "filesExplorerFocus && !inputFocus"
+    "command": "deleteFile", // Deletes the selected file in the file explorer
+    "key": "d", // Shortcut key
+    "when": "filesExplorerFocus && !inputFocus" // Condition: works when file explorer is focused and no input box is active
   },
 
   // EXTRA
   {
-    "key": "ctrl+shift+5",
-    "command": "editor.emmet.action.matchTag"
+    "key": "ctrl+shift+5", // Shortcut key combination
+    "command": "editor.emmet.action.matchTag" // Executes Emmet's 'Match Tag' action in the editor
   },
   {
-    "key": "ctrl+z",
-    "command": "workbench.action.toggleZenMode"
+    "key": "ctrl+z", // Shortcut key combination
+    "command": "workbench.action.toggleZenMode" // Toggles Zen Mode, which provides a distraction-free editing environment
+  },
+  {
+    "key": "ctrl+cmd+a", // Toggle side bar (keeping it for tmc)
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+
+  // adding vim motions moving through command palette
+
+  // Other keybindings...
+  {
+    "key": "j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "g",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpenEntry && !inQuickOpenDetails"
+  },
+  {
+    "key": "G",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpenEntry && !inQuickOpenDetails"
   }
 ]
