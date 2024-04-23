@@ -31,7 +31,7 @@
   },
 
   // FILE TREE
- // open tree with caps+e 
+  // open tree with caps+e
   {
     "command": "workbench.action.toggleSidebarVisibility",
     "key": "ctrl+e"

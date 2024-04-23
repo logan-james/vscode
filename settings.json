@@ -1,92 +1,97 @@
 {
-  "editor.formatOnSave": true,
-  "editor.suggest.insertMode": "replace",
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "editor.linkedEditing": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 1,
-  "launch": {},
-  "[json]": {},
-  "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
-  "workbench.iconTheme": "material-icon-theme",
-  "update.showReleaseNotes": false,
-  "zenMode.hideLineNumbers": false,
-  "editor.lineNumbers": "relative",
+  "editor.formatOnSave": true, // Automatically formats the code when you save a file
+  "editor.suggest.insertMode": "replace", // Suggestions replace the current text rather than being inserted
+  "terminal.integrated.fontFamily": "MesloLGS NF", // Specifies the font family used in the integrated terminal
+  "editor.linkedEditing": true, // When enabled, typing in one variable name will auto-change linked variables (previously called "synced regions")
+  "javascript.updateImportsOnFileMove.enabled": "always", // Automatically updates imports when a JavaScript file is moved
+  "window.zoomLevel": 0.5, // Sets the zoom level of the window
+  "launch": {}, // Configurations related to launching the application
+  "[json]": {}, // Specific settings that apply when editing JSON files
+  "workbench.statusBar.visible": false, // Hides the status bar at the bottom of the workspace
+  "editor.minimap.enabled": false, // Disables the minimap view on the side of the editor
+  "breadcrumbs.enabled": false, // Disables the breadcrumb navigation on the top of the editor
+  "workbench.iconTheme": "material-icon-theme", // Sets the icon theme of the sidebar to Material Design icons
+  "update.showReleaseNotes": false, // Disables the display of release notes after updating VSCode
+  // "workbench.activityBar.visible": false, // Hides the activity bar on the side of the workspace
+  "zenMode.hideLineNumbers": false, // In Zen Mode, does not hide tabs
+  "editor.lineNumbers": "relative", // Shows line numbers relative to the cursor location
 
-  "vim.leader": "<Space>",
-  "vim.hlsearch": true,
+  "vim.leader": "<Space>", // Sets the Vim leader key to Space
+  "vim.hlsearch": true, // Highlights search matches
   "vim.normalModeKeyBindingsNonRecursive": [
-    
     // NAVIGATION
-
-    // switch b/w buffers Shift+h or Shift+l (jumpings tabs)
-    { "before": ["<S-h>"], "commands": [":bprevious"] },
-    { "before": ["<S-l>"], "commands": [":bnext"] },
+    { "before": ["<S-h>"], "commands": [":bprevious"] }, // Switch to the previous buffer
+    { "before": ["<S-l>"], "commands": [":bnext"] }, // Switch to the next buffer
 
     // splits
-    // splits vertical (space+v) or horizontal pane (space+s)
-    { "before": ["leader", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s"], "commands": [":split"] },
+    { "before": ["leader", "v"], "commands": [":vsplit"] }, // Split the view vertically
+    { "before": ["leader", "s"], "commands": [":split"] }, // Split the view horizontally
 
     // panes
-    // space+h or j or k or l to navigate or switch tabs/panes when bunch open
     {
       "before": ["leader", "h"],
       "commands": ["workbench.action.focusLeftGroup"]
-    },
+    }, // Focus the group of files to the left
     {
       "before": ["leader", "j"],
       "commands": ["workbench.action.focusBelowGroup"]
-    },
+    }, // Focus the group of files below
     {
       "before": ["leader", "k"],
       "commands": ["workbench.action.focusAboveGroup"]
-    },
+    }, // Focus the group of files above
     {
       "before": ["leader", "l"],
       "commands": ["workbench.action.focusRightGroup"]
-    },
+    }, // Focus the group of files to the right
     // NICE TO HAVE
-    { "before": ["leader", "w"], "commands": [":w!"] },
-    { "before": ["leader", "q"], "commands": [":q!"] },
-    { "before": ["leader", "x"], "commands": [":x!"] },
+    { "before": ["leader", "w"], "commands": [":w!"] }, // Force save the current file
+    { "before": ["leader", "q"], "commands": [":q!"] }, // Force close the current file
+    { "before": ["leader", "x"], "commands": [":x!"] }, // Force save and close the current file
     {
       "before": ["[", "d"],
       "commands": ["editor.action.marker.prev"]
-    },
+    }, // Navigate to the previous marker
     {
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"]
-    },
+    }, // Navigate to the next marker
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.quickFix"]
-    },
-    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
-    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    }, // Apply a quick fix to the current issue
+    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] }, // Open the quick open panel
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] }, // Format the current document
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
-    }
+    } // Show a hover with the definition of the symbol at the cursor
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
-    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
-    { "before": [">"], "commands": ["editor.action.indentLines"] },
-    // Move selected lines while staying in visual mode
-    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
-    // toggle comment selection
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    }
+    // Additional bindings can be added here
   ],
-  
-  
-  "workbench.colorTheme": "Everforest Dark",
+  "workbench.colorTheme": "Tokyo Night",
   "workbench.sideBar.location": "right",
+  "editor.fontSize": 14,
   "editor.cursorBlinking": "solid",
-  "workbench.startupEditor": "none",
-  "files.autoSave": "afterDelay",
-  "editor.tabSize": 2,
-  "editor.fontSize": 16,
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block-outline",
+
+  "vim.handleKeys": {
+    "<C-d>": false,
+    "<C-u>": false,
+    "j": false,
+    "k": false,
+    "h": false,
+    "l": false
+  }
 }
